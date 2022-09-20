@@ -1,0 +1,89 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include <time.h>
+#define N 10
+
+void entrada_dados(int x[]);
+void imprimir_vetor(int x[]);
+int vet1[N], vet2[N], vet3[N], vet4[N], vet5[N];	
+int par[5];
+
+int main(){
+	srand(time(NULL));
+	int i;
+	int maior;
+
+	printf("\n Vetor 1\n ");
+	entrada_dados(vet1);
+	imprimir_vetor(vet1);
+	for(i=0;i<N;i++){
+		if(vet1[i]%2==0){
+		par[0] = par[0] + vet1[i];
+		}
+	}
+	printf("\n\nPares vetor 1: %d \n", par[0]);
+		
+	printf("\nO Vetor 2\n ");
+	entrada_dados(vet2);
+	imprimir_vetor(vet2);
+	for(i=0;i<N;i++){
+		if(vet2[i]%2==0){
+		par[1] = par[1] + vet2[i];
+		}
+	}
+	printf("\n\nPares vetor 2: %d \n", par[1]);
+	
+	printf("\nO Vetor 3\n ");
+	entrada_dados(vet3);
+	imprimir_vetor(vet3);
+		for(i=0;i<N;i++){
+		if(vet3[i]%2==0){
+		par[2] = par[2] + vet3[i];
+		}
+	}
+	printf("\n\nPares vetor 3: %d \n", par[2]);
+			
+	printf("\nO Vetor 4\n ");
+	entrada_dados(vet4);
+	imprimir_vetor(vet4);
+		for(i=0;i<N;i++){
+		if(vet4[i]%2==0){
+		par[3] = par[3] + vet4[i];
+		}
+	}
+	printf("\n\nPares vetor 4: %d \n", par[3]);
+		
+	printf("\nO Vetor 5\n ");
+	entrada_dados(vet5);
+	imprimir_vetor(vet5);
+	for(i=0;i<N;i++){
+		if(vet5[i]%2==0){
+		par[4] = par[4] + vet5[i];
+		}
+	}
+	printf("\n\nPares vetor 5: %d \n", par[4]);
+
+	for(i=0;i<5;i++){
+		if(par[i]>maior){
+			maior= par[i];
+		}
+	}
+	
+	printf("\n Maior elemento dentre os numeros pares : %d", maior);
+
+	return 0;
+}
+
+	void entrada_dados(int x[]) {
+	int i;
+		for(i=0;i<N;i++){
+			x[i]=rand()%100+1;
+		}
+	}
+	
+	void imprimir_vetor(int x[]) {
+		int i;
+		for(i=0;i<N;i++){
+			printf("\nposicao[%i]= %0.2d ", i,x[i]);
+		}
+	}
